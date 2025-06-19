@@ -85,8 +85,8 @@ Access my portfolio here: [hasanbakar.github.io](https://hasanbakar.github.io)
 
 Feel free to reach out via:
 
-- 💼 [LinkedIn](https://www.linkedin.com/in/hasanbakar)
-- 📧 Email: [hasanbakar@example.com](mailto:hasanbakar@example.com)
+- 💼 [LinkedIn](https://www.linkedin.com/in/hasanbakar.dev)
+- 📧 Email: [hasanbakar.dev@gmail.com](mailto:hasanbakar.dev@gmail.com)
 - 💻 [GitHub](https://github.com/HasanBakar)
 
 ---
