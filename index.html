@@ -29,7 +29,7 @@
 <link rel="me" href="https://linkedin.com/in/hasanbakar.dev" />
 <link rel="me" href="https://github.com/hasanbakar" />
 <link rel="me" href="https://www.youtube.com/@Hasan_Bakar" />
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
 
 <title>Abu Bakar - MERN Stack Developer | DevOps Engineer Portfolio</title>
    
@@ -1235,16 +1235,11 @@
                         </div>
                     </div>
                 </div>
-                <!-- Include EmailJS SDK -->
-<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script type="text/javascript">
-  (function () {
-    emailjs.init("jj70Z5XIAISNGE0K1"); // Replace with your actual EmailJS Public Key
-  })();
-</script>
+                
 
 <div class="card">
-  <form class="contact-form" id="contact-form">
+  <form class="contact-form" id="contact-form" 
+        action="https://formsubmit.io/hasanbakar.dev@gmail.com" method="POST">
   <div class="form-group">
     <label for="name" class="form-label">Full Name</label>
     <input
@@ -1281,7 +1276,7 @@
     />
   </div>
 
-  <div class="form-group">
+  <div class="form-group" >
     <label for="message" class="form-label">Message</label>
     <textarea
       id="message"
@@ -1291,35 +1286,15 @@
       required
     ></textarea>
   </div>
-
+ 
+  <input type="hidden" name="_redirect" value="https://hasanbakar.github.io/success.html">
   <button type="submit" class="btn btn-primary">
     <i class="fas fa-paper-plane"></i> Send Message
   </button>
 </form>
 
 </div>
-
-<!-- EmailJS Send Script -->
-<script>
-  const form = document.getElementById("contact-form");
-
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    emailjs
-      .sendForm("service_u0hdd5x", "template_5aa2lfh", this)
-      .then(() => {
-        alert("Message sent successfully!");
-        form.reset();
-      })
-      .catch((error) => {
-        console.error("EmailJS Error:", error);
-        alert("Failed to send message. Please try again.");
-      });
-  });
-</script>
-
-            </div>
+</div>
         </div>
     </section>
 
