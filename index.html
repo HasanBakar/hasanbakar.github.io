@@ -1755,5 +1755,41 @@ RESEARCH INTERESTS
             });
         }
     </script>
+    <script>
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Optional anti-spam honeypot check
+    if (document.querySelector('[name="_honey"]').value) return;
+
+    const form = e.target;
+    const formData = new FormData(form);
+    const dataObject = {};
+    formData.forEach((value, key) => {
+      if (!key.startsWith("_")) {
+        dataObject[key] = value;
+      }
+    });
+
+    fetch("https://sheetdb.io/api/v1/54qmc520isw03", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ data: dataObject })
+    })
+      .then((res) => {
+        if (res.ok) {
+            form.reset();
+          window.location.href = form.querySelector('[name="_redirect"]').value;
+        } else {
+          alert("Something went wrong!");
+        }
+      })
+      .catch((err) => {
+        alert("Error: " + err.message);
+      });
+  });
+</script>
 </body>
 </html>
