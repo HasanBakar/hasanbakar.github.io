@@ -86,6 +86,10 @@
         }
         
         body {
+        user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
             color: var(--text-primary);
@@ -890,7 +894,7 @@
         }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false">
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -1791,5 +1795,36 @@ RESEARCH INTERESTS
       });
   });
 </script>
+
+<script>
+    // Disable keyboard shortcuts
+    document.addEventListener('keydown', function (e) {
+      if (
+        e.key === 'F12' ||                              // Dev tools
+        (e.ctrlKey && e.shiftKey && e.key === 'I') ||   // Inspect
+        (e.ctrlKey && e.key === 'U') ||                 // View source
+        (e.ctrlKey && e.key === 'C') ||                 // Copy
+        (e.ctrlKey && e.key === 'S') ||                 // Save
+        (e.ctrlKey && e.key === 'A')                    // Select All
+      ) {
+        e.preventDefault();
+        alert("Action blocked for security reasons.");
+      }
+    });
+
+    // Disable right-click
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+      alert("Right-click is disabled.");
+    });
+
+    // Disable copy event
+    document.addEventListener('copy', function (e) {
+      e.preventDefault();
+      alert("Copying is disabled.");
+    });
+  </script>
+
+
 </body>
 </html>
